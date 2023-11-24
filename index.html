@@ -1,8 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Add styles for snowflakes */
+    body {
+      overflow: hidden; /* Hide scroll bars */
+      margin: 0;
+    }
+
+    .snowflake {
+      position: fixed;
+      background: #fff;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: snowfall linear infinite;
+      transform-origin: 50% 50%;
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
     .header {
       background-color: rgba(0, 0, 0, 0.5);
       position: relative;
@@ -124,8 +152,6 @@
       text-align: center;
     }
   </style>
-  <title>Top up site</title>
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Function to create animated buttons
@@ -154,11 +180,11 @@
       buttonContainer.className = 'center-buttons';
 
       var buttons = [
-        { text: 'MOBILE LEGENDS', backgroundColor: '#808080', link: 'https://www.codashop.com/en-ph/mobile-legends' },
-        { text: 'CALL OF DUTY', backgroundColor: '#ffffff', link: 'https://www.codashop.com/en-ph/call-of-duty-mobile-shells-voucher' },
-        { text: 'GENSHIN IMPACT', backgroundColor: '#808080', link: 'https://www.codashop.com/en-ph/genshin-impact' },
-        { text: 'FARLIGHT 84', backgroundColor: '#ffffff', link: 'https://www.codashop.com/en-ph/farlight-84' },
-        { text: 'CLASH ROYALE', backgroundColor: '#808080', link: 'https://www.codashop.com/en-ph/clash-royale' }
+        { text: 'MOBILE LEGENDS', backgroundColor: '#000000', link: 'https://www.codashop.com/en-ph/mobile-legends' },
+        { text: 'CALL OF DUTY', backgroundColor: '#000000', link: 'https://www.codashop.com/en-ph/call-of-duty-mobile-shells-voucher' },
+        { text: 'GENSHIN IMPACT', backgroundColor: '#000000', link: 'https://www.codashop.com/en-ph/genshin-impact' },
+        { text: 'FARLIGHT 84', backgroundColor: '#000000', link: 'https://www.codashop.com/en-ph/farlight-84' },
+        { text: 'CLASH ROYALE', backgroundColor: '#000000', link: 'https://www.codashop.com/en-ph/clash-royale' }
       ];
 
       buttons.forEach(function (buttonInfo) {
@@ -171,11 +197,32 @@
       // Create the "About Me" button and append it to the document body
       var aboutMeButtonContainer = document.createElement('div');
       aboutMeButtonContainer.className = 'about-me-button';
-      var aboutMeButton = createAnimatedButton('ABOUT ME', '#808080', 'https://drive.google.com/file/d/1jXvYJUzEACAlBnEa2WTiz9lWNjI4tLK7/view?usp=sharing');
+      var aboutMeButton = createAnimatedButton('ABOUT ME', '#000000', 'https://drive.google.com/file/d/1jXvYJUzEACAlBnEa2WTiz9lWNjI4tLK7/view?usp=sharing');
       aboutMeButtonContainer.appendChild(aboutMeButton);
       document.body.appendChild(aboutMeButtonContainer);
+
+      // Function to create snowflakes
+      function createSnowflake() {
+        var snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.style.width = Math.random() * 10 + 'px';
+        snowflake.style.height = snowflake.style.width;
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        document.body.appendChild(snowflake);
+
+        // Remove snowflake when animation ends
+        snowflake.addEventListener('animationend', function () {
+          document.body.removeChild(snowflake);
+        });
+      }
+
+      // Create snowflakes at regular intervals
+      setInterval(createSnowflake, 500);
     });
   </script>
+  <title>Top up site</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
 </head>
 
 <body>
@@ -206,28 +253,28 @@
     <div class="center-logo">
       <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
         <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
-          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+          <img src="https://gcdnb.pbrd.co/images/HvECS19CIp7c.jpg?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
         </button>
       </a>
     </div>
     <div class="center-logo">
       <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
         <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
-          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+          <img src="https://gcdnb.pbrd.co/images/a1Vpoj0UHEND.jpg?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
         </button>
       </a>
     </div>
     <div class="center-logo">
       <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
         <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
-          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+          <img src="https://gcdnb.pbrd.co/images/pbt4e7wMUQtt.jpg?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
         </button>
       </a>
     </div>
     <div class="center-logo">
       <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
         <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
-          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+          <img src="https://gcdnb.pbrd.co/images/HLEjt4CCdmDT.jpg?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
         </button>
       </a>
     </div>
@@ -239,10 +286,6 @@
       </p>
     </center>
   </h2>
-
-  <!-- Center the logo button -->
-
-  <p style="color: red; font-size: 25px;"></p>
 </body>
 
 </html>
