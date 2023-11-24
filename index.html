@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .header {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: relative;
+      margin-top: 5px;
+      left: 0;
+      width: 100%;
+    }
+
+    body {
+      font-size: 20px;
+      background: url('bg farlight.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .logo {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: relative;
+      margin-top: 125px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      width: 150px;
+      margin: 10px;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+    /* Add animation CSS */
+    .animated-button {
+      transition: transform 0.2s ease-in-out;
+      margin-bottom: 20px; /* Add margin to create space between buttons */
+      margin-top: 10px;
+      background-color: transparent;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Keyframes for left animation */
+    @keyframes leftAnimation {
+      0%, 100% {
+        opacity: 1;
+        transform: translateX(-50%);
+      }
+      50% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Keyframes for right animation */
+    @keyframes rightAnimation {
+      0%, 100% {
+        opacity: 1;
+        transform: translateX(50%);
+      }
+      50% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Apply the animations to the corresponding elements */
+    .left-animation, .right-animation {
+      white-space: nowrap;
+      animation-duration: 8s; /* Retain the animation duration */
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; /* Keep the animation infinite */
+      animation-play-state: paused; /* Initially set the animation to paused */
+    }
+
+    .center-buttons.in-view .left-animation,
+    .center-buttons.in-view .right-animation {
+      animation-play-state: running; /* Run the animation when in view */
+    }
+
+    @keyframes colorchange {
+      0% {
+        color: #fff;
+      }
+      25% {
+        color: #32c8da;
+      }
+      50% {
+        color: #3d6acc;
+      }
+      100% {
+        color: #cc3dbb;
+      }
+      100% {
+        color: pink;
+      }
+    }
+
+    /* Center the logo button */
+    .center-logo {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    /* Center the clickable buttons */
+    .center-buttons {
+      text-align: center;
+    }
+
+    /* Center the "About Me" button */
+    .about-me-button {
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+  <title>Top up site</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Function to create animated buttons
+      function createAnimatedButton(text, backgroundColor, link) {
+        var button = document.createElement('button');
+        button.className = 'animated-button';
+        button.style.backgroundColor = backgroundColor;
+        button.style.color = 'black';
+        button.style.padding = '10px 20px';
+        button.style.border = 'none';
+        button.style.cursor = 'pointer';
+        button.style.fontFamily = "'Press Start 2P', cursive";
+        button.style.margin = '10px';
+        button.innerHTML = '<span style="-webkit-animation:colorchange 1s infinite alternate;">' + text + '</span>';
+
+        // Add click event to redirect to the specified link
+        button.addEventListener('click', function () {
+          window.location.href = link;
+        });
+
+        return button;
+      }
+
+      // Create the existing five buttons
+      var buttonContainer = document.createElement('div');
+      buttonContainer.className = 'center-buttons';
+
+      var buttons = [
+        { text: 'MOBILE LEGENDS', backgroundColor: '#808080', link: 'https://www.codashop.com/en-ph/mobile-legends' },
+        { text: 'CALL OF DUTY', backgroundColor: '#ffffff', link: 'https://www.codashop.com/en-ph/call-of-duty-mobile-shells-voucher' },
+        { text: 'GENSHIN IMPACT', backgroundColor: '#808080', link: 'https://www.codashop.com/en-ph/genshin-impact' },
+        { text: 'FARLIGHT 84', backgroundColor: '#ffffff', link: 'https://www.codashop.com/en-ph/farlight-84' },
+        { text: 'CLASH ROYALE', backgroundColor: '#808080', link: 'https://www.codashop.com/en-ph/clash-royale' }
+      ];
+
+      buttons.forEach(function (buttonInfo) {
+        var button = createAnimatedButton(buttonInfo.text, buttonInfo.backgroundColor, buttonInfo.link);
+        buttonContainer.appendChild(button);
+      });
+
+      document.body.appendChild(buttonContainer);
+
+      // Create the "About Me" button and append it to the document body
+      var aboutMeButtonContainer = document.createElement('div');
+      aboutMeButtonContainer.className = 'about-me-button';
+      var aboutMeButton = createAnimatedButton('ABOUT ME', '#808080', 'https://drive.google.com/file/d/1jXvYJUzEACAlBnEa2WTiz9lWNjI4tLK7/view?usp=sharing');
+      aboutMeButtonContainer.appendChild(aboutMeButton);
+      document.body.appendChild(aboutMeButtonContainer);
+    });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>
+      <p style="font-family: 'Friz Quadrata', animated-button;">
+        <font color="yellow">
+          <marquee direction="right" loop="90">WELCOME TO TOP UP SITE!</marquee>
+        </font>
+      </p>
+    </h1>
+  </div>
+  <div class="logo">
+    <div class="center-logo">
+      <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
+        <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
+          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+        </button>
+      </a>
+    </div>
+    <div class="center-logo">
+      <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
+        <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
+          <img src="https://gcdnb.pbrd.co/images/cAwKTG35aIbb.jpg?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+        </button>
+      </a>
+    </div>
+    <div class="center-logo">
+      <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
+        <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
+          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+        </button>
+      </a>
+    </div>
+    <div class="center-logo">
+      <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
+        <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
+          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+        </button>
+      </a>
+    </div>
+    <div class="center-logo">
+      <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
+        <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
+          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+        </button>
+      </a>
+    </div>
+    <div class="center-logo">
+      <a href="https://www.codashop.com/en-ph" style="text-decoration: none;">
+        <button class="animated-button" style=" padding: 10px 20px; border: none; cursor: pointer; font-family: 'Press Start 2P', cursive; margin: 10px auto;">
+          <img src="https://gcdnb.pbrd.co/images/b4vgwULJwBQP.png?o=1" alt="Your Logo" style="width: 150px; display: block; margin: 0 auto;" />
+        </button>
+      </a>
+    </div>
+  </div>
+  <h2>
+    <center>
+      <p style="font-family: 'Press Start 2P', cursive; color: white;">
+        <font color="white"></font>
+      </p>
+    </center>
+  </h2>
+
+  <!-- Center the logo button -->
+
+  <p style="color: red; font-size: 25px;"></p>
+</body>
+
+</html>
